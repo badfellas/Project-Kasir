@@ -91,7 +91,7 @@
                 <th scope="col">Nama Barang</th>
                 <th scope="col">Kategori</th>
                 <th scope="col">Stok</th>
-                <th scope="col">Harga</th>
+                <th scope="col">Hargaaa</th>
             </tr>
         </thead>
         <tbody>
