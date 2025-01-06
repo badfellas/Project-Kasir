@@ -344,7 +344,7 @@
                     <div class="col-lg-4">
                         <div class="card card-margin">
                             <div class="card-header no-border">
-                                <h5 class="card-title">DATA BARANG</h5>
+                                <h5 class="card-title">DATA BARANG SKUY</h5>
                             </div>
                             <div class="card-body pt-0">
                                 <div class="widget-49">
