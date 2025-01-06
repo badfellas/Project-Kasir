@@ -344,7 +344,11 @@
                     <div class="col-lg-4">
                         <div class="card card-margin">
                             <div class="card-header no-border">
+<<<<<<< HEAD
                                 <h5 class="card-title">DATA BARANGgg</h5>
+=======
+                                <h5 class="card-title">DATA BARANG SKUYYUK</h5>
+>>>>>>> 5ce83f9c579be3403528e12757a46c37c59a0bc5
                             </div>
                             <div class="card-body pt-0">
                                 <div class="widget-49">

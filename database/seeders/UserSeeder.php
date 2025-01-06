@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->truncate(); // Hapus semua data di tabel users sebelum menambahkan data baru
         DB::table('users')->insert([
             [
                 'nama' => 'BadFellaz',

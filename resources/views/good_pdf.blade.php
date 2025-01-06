@@ -91,7 +91,11 @@
                 <th scope="col">Nama Barang</th>
                 <th scope="col">Kategori</th>
                 <th scope="col">Stok</th>
+<<<<<<< HEAD
                 <th scope="col">Harga</th>
+=======
+                <th scope="col">Hargaaa</th>
+>>>>>>> 5ce83f9c579be3403528e12757a46c37c59a0bc5
             </tr>
         </thead>
         <tbody>
