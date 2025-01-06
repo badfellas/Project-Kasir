@@ -16,7 +16,7 @@
                 <li class="nav-item">
                     <a class="nav-link  {{ $active === 'beranda' ? 'active' : '' }}" aria-current="page"
                         href="/dashboard">Dashboard</a>
-                </li>   
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ $active === 'data' ? 'active' : '' }}" href="#"
                         id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -32,8 +32,8 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <!-- <a class="nav-link {{ $active === 'cashier' ? 'active' : '' }}" href="/dashboard/cashier">Sistem
-                        Kasir</a> -->
+                    <a class="nav-link {{ $active === 'cashier' ? 'active' : '' }}" href="/dashboard/cashier">Sistem
+                               Kasir</a>
                 </li>
                 <li class="nav-item">
                     <!-- <a class="nav-link {{ $active === 'rekap' ? 'active' : '' }}"
