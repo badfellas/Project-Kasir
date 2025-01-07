@@ -23,11 +23,8 @@
                         Manajemen Data
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-<<<<<<< HEAD
-                        <!-- <li><a class="dropdown-item" href="/dashboard/customers">Data Pelanggan</a></li> -->
-=======
+
                         <li><a class="dropdown-item" href="/dashboard/customers">Data Pelanggan</a></li>
->>>>>>> 5ce83f9c579be3403528e12757a46c37c59a0bc5
                         <li><a class="dropdown-item" href="/dashboard/goods">Data Barang</a></li>
                         <li><a class="dropdown-item" href="/dashboard/users">Data User</a></li>
                         <li><a class="dropdown-item" href="/dashboard/transactions">Data Transaksi</a></li>
