@@ -22,4 +22,8 @@ class Good extends Model
     {
         return $this->belongsTo(Category::class);
     }
+    public function good()
+{
+    return $this->belongsTo(Good::class);
+}
 }

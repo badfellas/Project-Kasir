@@ -312,172 +312,75 @@
             text-transform: uppercase;
         }
     </style>
+    @extends('dashboard.layouts.main')
+
+@section('container')
     <div class="container mt-3">
+        @if (session()->has('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{ session('success') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
+        @if (session()->has('error'))
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ session('error') }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        @endif
+
         <div class="card">
-            <div class="card-header">
-                Dashboard KasirKu
+            <div class="row">
+                <div class="col-3">
+                    <div class="card-header">
+                        Sistem Kasir
+                    </div>
+                </div>
+                <div class="col-9 d-flex align-items-center flex-row-reverse px-4">
+                    <a href="/dashboard/cashier/create" class="btn btn-sm btn-primary">+Tambah Transaksi</a>
+                </div>
             </div>
             <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-                                <h5 class="card-title">SISTEM KASIR</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-primary">
-                                            <span class="widget-49-date-day"><?php echo date('d'); ?></span>
-                                            <span class="widget-49-date-month" value><?php echo date('M'); ?></span>
-                                        </div>
-                                        <div class="widget-49-meeting-info">
-                                            <span class="widget-49-pro-title">Available </span>
-                                            <span id="jam" class=" widget-49-meeting-time"></span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-
-                                <h5 class="card-title">DATA BARANG</h5>
-
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-warning">
-                                            <span class="widget-49-date-day">{{ $countgood }}</span>
-                                            <span class="widget-49-date-month">data</span>
-                                        </div>
-                                        <div class="widget-49-meeting-info">
-                                            <span class="widget-49-pro-title">Available </span>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-                                <h5 class="card-title">DATA TRANSAKSI</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-success">
-                                            <span class="widget-49-date-day">{{ $counttrans }}</span>
-                                            <span class="widget-49-date-month">data</span>
-                                        </div>
-                                        <div class="widget-49-meeting-info">
-                                            <span class="widget-49-pro-title">Available </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-                                <h5 class="card-title">DATA KATEGORI BARANG</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-success">
-                                            <span class="widget-49-date-day">{{ $countcat }}</span>
-                                            <span class="widget-49-date-month">data</span>
-                                        </div>
-                                        <div class="widget-49-meeting-info">
-                                            <span class="widget-49-pro-title">Available </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-                                <h5 class="card-title">DATA USER</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-success">
-                                            <span class="widget-49-date-day">{{ $countuser }}</span>
-                                            <span class="widget-49-date-month">data</span>
-                                        </div>
-                                        <div class="widget-49-meeting-info">
-                                            <span class="widget-49-pro-title">Available </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="card card-margin">
-                            <div class="card-header no-border">
-                                <h5 class="card-title">REKAPITULASI</h5>
-                            </div>
-                            <div class="card-body pt-0">
-                                <div class="widget-49">
-                                    <div class="widget-49-title-wrapper">
-                                        <div class="widget-49-date-success">
-                                            <span class="widget-49-date-day">4</span>
-
-                                        </div>
-                                        <div class="widget-49-meeting-info">
-                                            <span class="widget-49-pro-title">Available </span>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nomor Nota</th>
+                            <th scope="col">Waktu Transaksi</th>
+                            <th scope="col">Nama Petugas</th>
+                            <th scope="col">Nama Pembeli</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Bayar</th>
+                            <th scope="col">Sisa Bayar</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($transactions as $index => $transaction)
+                            <tr>
+                                <td>{{ $index + 1 }}</td>
+                                <td>{{ $transaction->no_nota }}</td>
+                                <td>{{ $transaction->created_at }}</td>
+                                <td>{{ $transaction->user ? $transaction->user->nama : 'Tidak Diketahui' }}</td>
+                                <td>{{ $transaction->nama_pembeli }}</td>
+                                <td>{{ $transaction->status }}</td>
+                                <td>{{ number_format($transaction->total_biaya, 2, ',', '.') }}</td>
+                                <td>{{ number_format($transaction->bayar, 2, ',', '.') }}</td>
+                                <td>{{ number_format($transaction->kembalian, 2, ',', '.') }}</td>
+                                <td>
+                                    <form method="post" action="/dashboard/cashiers/nota">
+                                        @csrf
+                                        <input type="hidden" name="no_nota" value="{{ $transaction->no_nota }}">
+                                        <button type="submit" class="btn btn-primary btn-sm">Unduh Nota</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
             </div>
         </div>
-
     </div>
-
-    <script type="text/javascript">
-        window.onload = function() {
-            jam();
-        }
-
-        function jam() {
-            var e = document.getElementById('jam'),
-                d = new Date(),
-                h, m, s;
-            h = d.getHours();
-            m = set(d.getMinutes());
-            s = set(d.getSeconds());
-
-            e.innerHTML = h + ':' + m + ':' + s;
-
-            setTimeout('jam()', 1000);
-        }
-
-        function set(e) {
-            e = e < 10 ? '0' + e : e;
-            return e;
-        }
-    </script>
 @endsection

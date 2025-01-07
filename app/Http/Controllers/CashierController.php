@@ -21,10 +21,9 @@ class CashierController extends Controller
     {
         return view('dashboard.cashiers.index', [
             'active' => 'cashier',
-            'transactions' => Transaction::all(),
+            'transactions' => Transaction::with('user')->latest()->get()
         ]);
     }
-
     /**
      * Display a listing of the resource.
      *
@@ -142,18 +141,39 @@ class CashierController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function nota(Request $request)
-    {
-        $transaction = Transaction::where('no_nota', $request['no_nota'])->get();
-        $orders = Order::where('no_nota', $request['no_nota'])->get();
-
-        $pdf = PDF::loadview('nota_pdf', [
-            'transaction' => $transaction,
-            'orders' => $orders,
-        ]);
-
-        return $pdf->download('nota.pdf');
-     
+{
+    // Ambil no_nota dari request
+    $no_nota = $request->no_nota;
+    
+    // Cari transaksi tunggal (single transaction)
+    $transaction = Transaction::where('no_nota', $no_nota)->first();
+    
+    // Jika transaksi tidak ditemukan
+    if (!$transaction) {
+        return redirect()->back()->with('error', 'Transaksi tidak ditemukan');
     }
+    
+    // Ambil semua order yang terkait
+    $orders = Order::with('good')
+                  ->where('no_nota', $no_nota)
+                  ->get();
+                  
+    // Jika tidak ada order
+    if ($orders->isEmpty()) {
+        return redirect()->back()->with('error', 'Detail order tidak ditemukan');
+    }
+    
+    // Generate PDF
+    $pdf = PDF::loadView('nota_pdf', [
+        'transaction' => $transaction,
+        'orders' => $orders
+    ]);
+    
+    // Download PDF
+    return $pdf->download('nota_'.$no_nota.'.pdf');
+}
+    
+    
 
     /**
      * Store a newly created resource in storage.

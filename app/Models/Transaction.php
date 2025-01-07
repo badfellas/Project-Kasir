@@ -33,5 +33,8 @@ public function user()
                   ->orWhere('nama_pembeli', 'like', '%' . $filters['search'] . '%');
         }
     }
-
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'no_nota', 'no_nota');
+    }
 }

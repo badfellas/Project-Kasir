@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('no_nota', 50); // Batas panjang untuk efisiensi
+            $table->string('no_nota', 50)->unique(); // Menambahkan unique untuk memastikan no_nota tidak duplikat
             $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Relasi ke tabel users dengan penghapusan cascade
             $table->string('nama_pembeli', 100); // Batas panjang nama pembeli
             $table->enum('status', ['pending', 'paid', 'cancelled', 'lunas'])->default('pending'); // Status dengan nilai default
@@ -24,6 +24,10 @@ return new class extends Migration
             $table->decimal('bayar', 10, 2)->default(0);
             $table->decimal('kembalian', 10, 2)->default(0);
             $table->timestamps();
+            
+            // Menambahkan indeks pada kolom yang sering digunakan untuk pencarian
+            $table->index('no_nota');
+            $table->index('user_id');
         });
     }
 

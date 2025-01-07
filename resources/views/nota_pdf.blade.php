@@ -88,11 +88,10 @@
 <body>
 
     <div class="center">
-        @foreach ($transaction as $transaction)
-            <h5>NOTA {{ $transaction->no_nota }}</h5>
-            <h6>Toko</h6>
-        @endforeach
+    <h5>NOTA {{ $transaction->no_nota }}</h5>
+    <h6>Toko</h6>
     </div>
+
 
     <table class="table table-light">
         <thead>
