@@ -336,7 +336,7 @@
                                             <span id="jam" class=" widget-49-meeting-time"></span>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -344,7 +344,11 @@
                     <div class="col-lg-4">
                         <div class="card card-margin">
                             <div class="card-header no-border">
-                                <h5 class="card-title">DATA BARANG</h5>
+<<<<<<< HEAD
+                                <h5 class="card-title">DATA BARANGgg</h5>
+=======
+                                <h5 class="card-title">DATA BARANG SKUYYUK</h5>
+>>>>>>> 5ce83f9c579be3403528e12757a46c37c59a0bc5
                             </div>
                             <div class="card-body pt-0">
                                 <div class="widget-49">
@@ -357,8 +361,8 @@
                                             <span class="widget-49-pro-title">Available </span>
                                         </div>
                                     </div>
-                                   
-                                  
+
+
                                 </div>
                             </div>
                         </div>
@@ -379,7 +383,7 @@
                                             <span class="widget-49-pro-title">Available </span>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -402,7 +406,7 @@
                                             <span class="widget-49-pro-title">Available </span>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -423,7 +427,7 @@
                                             <span class="widget-49-pro-title">Available </span>
                                         </div>
                                     </div>
-                                   
+
                                 </div>
                             </div>
                         </div>
@@ -438,13 +442,13 @@
                                     <div class="widget-49-title-wrapper">
                                         <div class="widget-49-date-success">
                                             <span class="widget-49-date-day">4</span>
-                                          
+
                                         </div>
                                         <div class="widget-49-meeting-info">
                                             <span class="widget-49-pro-title">Available </span>
                                         </div>
                                     </div>
-                                
+
                                 </div>
                             </div>
                         </div>
