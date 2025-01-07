@@ -6,7 +6,7 @@
 
 <nav class="navbar navbar-dark navbar-expand-lg">
     <div class="container-fluid">
-        <a class="navbar-brand " href="#">KasirGwe</a>
+        <a class="navbar-brand " href="#">KasirKu</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -15,8 +15,8 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
                 <li class="nav-item">
                     <a class="nav-link  {{ $active === 'beranda' ? 'active' : '' }}" aria-current="page"
-                        href="/dashboard">Dashboard</a>
-                </li>   
+                        href="/dashboard">Beranda</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle {{ $active === 'data' ? 'active' : '' }}" href="#"
                         id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -28,16 +28,16 @@
                         <li><a class="dropdown-item" href="/dashboard/users">Data User</a></li>
                         <li><a class="dropdown-item" href="/dashboard/transactions">Data Transaksi</a></li>
                         <li><a class="dropdown-item" href="/dashboard/categories">Data Kategori Barang</a></li>
-                        <!-- <li><a class="dropdown-item" href="/dashboard/hutang">Data Hutang</a></li> -->
+                        <li><a class="dropdown-item" href="/dashboard/hutang">Data Hutang</a></li>
                     </ul>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link {{ $active === 'cashier' ? 'active' : '' }}" href="/dashboard/cashier">Sistem
-                Kasir</a>
+                    <a class="nav-link {{ $active === 'cashier' ? 'active' : '' }}" href="/dashboard/cashier">Sistem
+                        Kasir</a>
                 </li>
                 <li class="nav-item">
-                    <!-- <a class="nav-link {{ $active === 'rekap' ? 'active' : '' }}"
-                        href="/dashboard/rekapitulasi">Rekapitulasi</a> -->
+                    <a class="nav-link {{ $active === 'rekap' ? 'active' : '' }}"
+                        href="/dashboard/rekapitulasi">Rekapitulasi</a>
                 </li>
 
             </ul>

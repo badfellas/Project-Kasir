@@ -15,7 +15,13 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->truncate(); // Hapus semua data di tabel users sebelum menambahkan data baru
+        // Nonaktifkan foreign key checks
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+
+        // Hapus semua data dari tabel users
+        DB::table('users')->delete();
+
+        // Isi tabel users dengan data baru
         DB::table('users')->insert([
             [
                 'nama' => 'BadFellaz',
@@ -30,7 +36,10 @@ class UserSeeder extends Seeder
                 'password' => Hash::make('fajri123'),
                 'created_at' => now(),
                 'updated_at' => now(),
-            ]
+            ],
         ]);
+
+        // Aktifkan kembali foreign key checks
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
     }
 }

@@ -15,14 +15,14 @@ return new class extends Migration
     {
         Schema::create('transactions', function (Blueprint $table) {
             $table->id();
-            $table->string('no_nota');
-            $table->foreignId('user_id');
-            $table->string('nama_pembeli');
-            $table->string('status');
+            $table->string('no_nota', 50); // Batas panjang untuk efisiensi
+            $table->foreignId('user_id')->constrained()->onDelete('cascade'); // Relasi ke tabel users dengan penghapusan cascade
+            $table->string('nama_pembeli', 100); // Batas panjang nama pembeli
+            $table->enum('status', ['pending', 'paid', 'cancelled', 'lunas'])->default('pending'); // Status dengan nilai default
             $table->date('tgl_transaksi');
-            $table->integer('total_harga');
-            $table->integer('bayar');
-            $table->integer('kembalian');
+            $table->decimal('total_harga', 15, 2)->default(0); // Nilai default untuk total harga
+            $table->decimal('bayar', 10, 2)->default(0);
+            $table->decimal('kembalian', 10, 2)->default(0);
             $table->timestamps();
         });
     }
